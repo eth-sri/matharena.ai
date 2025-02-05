@@ -1,3 +1,3 @@
-# ConStat
+# MathArena
 
-Code for [constat.ai](https://www.constat.ai).
+Code for [matharena.ai](https://www.matharena.ai).
