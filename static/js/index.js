@@ -301,7 +301,7 @@ $(document).ready(function() {
 					if (col == 16) {
 						string = string + '%';
 					}
-					if (string.length < 5) {
+					if (string.length < 6) {
 						// Add a non-breaking space (invisible but retains width)
 						string = '\u00A0' + '\u00A0' + string;
 					}
