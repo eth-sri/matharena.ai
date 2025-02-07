@@ -4,12 +4,15 @@
   <meta charset="utf-8">
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
-    <meta property="og:title" content="MathArena"/>
-  <meta property="og:description" content="MathArena">
+    <meta property="og:title" content="MathArena.ai"/>
+  <meta property="og:description" content="MathArena: Live Leaderboards for Math Competitions and Olympiads"/>
+  <meta property="description" content="MathArena: Live Leaderboards for Math Competitions and Olympiads"/>
+
   <meta property="og:url" content="https://matharena.ai/"/>
     <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
-  
+  <meta name="keywords" content="Math, LLM, Olympiads, Competitions, Leaderboards, AI, Machine Learning, MathArena, MathArena.ai"/>
+
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -49,8 +52,9 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">MathArena: Coming Soon</h1>
+            <h1 class="title is-1 publication-title">MathArena.ai: LLMs on Recent Math Competitions and Olympiads</h1>
             <div class="is-size-5 publication-authors">
+              <span class="author-block">SRI Lab @ ETH Zurich</span>
             </div>
           </div>
         </div>
@@ -62,6 +66,82 @@
   </div>
 </section>
 
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-justified">
+          <div class="table-info-box">
+            <b>Model scores on AIME I 2025</b>
+        </div>
+          <table id="myTopTable" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th rowspan="2">Model Name</th>
+                    <th colspan="17" style="text-align: center; font-size: 20px">AIME I 2025</th>
+                    <!-- <th colspan="1">o3-mini</th>
+                    <th colspan="1">o1</th>
+                    <th colspan="1">o1-mini</th>
+                    <th colspan="1">R1</th>
+                    <th colspan="1">Gemini-Flash-Thinking</th> -->
+                    <!-- <th>GSM8k</th>
+                    <th>Hellaswag</th>
+                    <th rowspan="2">MMLU</th> -->
+                </tr>
+                <tr>
+                  <th colspan="1">1</th>
+                  <th colspan="1">2</th>
+                  <th colspan="1">3</th>
+                  <th colspan="1">4</th>
+                  <th colspan="1">5</th>
+                  <th colspan="1">6</th>
+                  <th colspan="1">7</th>
+                  <th colspan="1">8</th>
+                  <th colspan="1">9</th>
+                  <th colspan="1">10</th>
+                  <th colspan="1">11</th>
+                  <th colspan="1">12</th>
+                  <th colspan="1">13</th>
+                  <th colspan="1">14</th>
+                  <th colspan="1">15</th>
+                  <th colspan="1">Avg</th>
+                  <th colspan="1">Cost</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        </div>
+      </div>
+      </div>
+      </div>
+</section>
+
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">What is MathArena?</h2>
+        <div class="content has-text-justified">
+          <div class="caption">
+            We pit LLMs against each other and humans on recent math competitions and olympiads, providing the possibility for uncontaminated model evaluation. 
+            We hope that this will lead to better understanding of the capabilities and limitations of LLMs on math tasks.
+          </div>
+          <p>
+            MathArena is a platform for evaluating LLMs on math competitions and olympiads.
+            Our goal is the accurate evaluation of LLMs on math tasks that are not seen during training. 
+            Furthermore, by performing standardized evaluation, we ensure model scores are actually comparable.
+            For this purpose, we provide a leaderboard for each competition, showing the scores of different models on each problem.
+            Specifically, we evaluate each model several times on each problem, computing the average score and the cost of the model.
+            In the tables, green problems are solved >75% of the time, yellow problems are solved 25-75% of the time, and red problems are solved less than 25% of the time.
+            For further information, we refer to our GitHub repository and blog post.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
 <footer class="footer">
@@ -69,10 +149,6 @@
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content has-text-centered">
-          <br>
-          This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
-            target="_blank">Academic Project Page Template</a>.
-          <br>
           <br>
           <img class="logos" src="static/images/footer.svg" alt="ETH & SRI Logo">
         </div>
