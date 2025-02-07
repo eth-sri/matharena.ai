@@ -249,6 +249,8 @@ $(document).ready(function() {
 		"data": transposed_data,
 		"columns": [
 	        { "data": "model_name" },
+			{ "data": "Avg" },
+			{ "data": "Cost" },
 			{ "data": "1" },
 			{ "data": "2" },
 			{ "data": "3" },
@@ -264,8 +266,7 @@ $(document).ready(function() {
 			{ "data": "13" },
 			{ "data": "14" },
 			{ "data": "15" },
-			{ "data": "Avg" },
-			{ "data": "Cost" },
+			
 	    ],
 		"pageLength": 17,
 		"order": [],
@@ -280,7 +281,7 @@ $(document).ready(function() {
 		"stripeClasses": [],
 		"columnDefs": [
 			{
-				"targets": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+				"targets": [3,4,5,6,7,8,9,10,11,12,13,14,15,16,17],
 				"createdCell": function (td, cellData, rowData, row, col) {
 					var pValue = parseFloat(cellData);
 					var color = getColor(pValue);
@@ -290,15 +291,15 @@ $(document).ready(function() {
 				}
 			},
 			{
-				"targets": [16,17],
+				"targets": [1,2],
 				"createdCell": function (td, cellData, rowData, row, col) {
 					var pValue = parseFloat(cellData);
 					// if the target is <= 15, then remove the text
 					var string = pValue.toFixed(2).toString();
-					if (col == 17) {
+					if (col == 2) {
 						string = '$' + string;
 					}
-					if (col == 16) {
+					if (col == 1) {
 						string = string + '%';
 					}
 					if (string.length < 6) {
@@ -311,8 +312,8 @@ $(document).ready(function() {
 			},
 			{ width: '20%', targets: 0, className: 'model-names' },
 			// set font size of last two columns
-			{ width: '5%', targets: 16, className: 'avg-cost' },
-			{ width: '5%', targets: 17, className: 'avg-cost' },
+			{ width: '5%', targets: 1, className: 'avg-cost' },
+			{ width: '5%', targets: 2, className: 'avg-cost' },
 		],
 	});
 	table.columns.adjust().draw();
