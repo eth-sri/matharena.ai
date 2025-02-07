@@ -227,6 +227,9 @@ $(document).ready(function() {
 					var pValue = parseFloat(cellData);
 					// if the target is <= 15, then remove the text
 					var string = pValue.toFixed(2).toString();
+					if (col == 17) {
+						string = '$' + string;
+					}
 					if (string.length < 5) {
 						// Add a non-breaking space (invisible but retains width)
 						string = '\u00A0' + '\u00A0' + string;
