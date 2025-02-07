@@ -247,6 +247,7 @@ div.dt-container .dt-paging .current {
 
 .model-names {
   font-size: 1.0rem !important;
+  min-width: 150px;
   /* font-family: "Latin Modern Roman", serif; */
   /* font-variant: small-caps; */
 }
