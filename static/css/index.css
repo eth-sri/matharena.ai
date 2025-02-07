@@ -21,6 +21,11 @@ body {
   font-variant: small-caps;
 }
 
+.column.is-ninety{
+  flex:none;
+  width:90%
+}
+
 
 .teaser .hero-body {
   padding-top: 0;
