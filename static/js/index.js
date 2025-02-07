@@ -199,7 +199,7 @@ var result_data = [
         "DeepSeek-R1": 4.90553,
         "DeepSeek-R1-Distill-Qwen-14B": 1.1507616,
         "DeepSeek-R1-Distill-Llama-70B": 1.3534620000000002,
-        "gemini-2.0-flash": 0.151304,
+        "gemini-2.0-flash": 0.00,
         "DeepSeek-R1-Distill-Qwen-1.5B": 0.1600641,
         "gpt-4o": 0.5545100000000001,
         "claude-3.5-sonnet": 0.534252,
