@@ -228,8 +228,15 @@ div.dt-container .dt-paging .current {
   font-size: 0.8rem;
 }
 
-.competition-name, .model-name {
+.competition-name {
   text-align: center; 
+  font-size: 1.1rem !important;
+  font-family: "Helvetica" !important;
+  font-variant: normal !important;
+}
+
+.model-name {
+  text-align: left !important; 
   font-size: 1.1rem !important;
   font-family: "Helvetica" !important;
   font-variant: normal !important;
