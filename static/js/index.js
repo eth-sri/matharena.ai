@@ -236,12 +236,27 @@ $(document).ready(function() {
 					var color = getColor(pValue);
 					$(td).css('background-color', color);
 					// if the target is <= 15, then remove the text
-					if (col < 16) {
-						$(td).text("");
-					}
+					$(td).text("");
 				}
 			},
-			{ width: '20%', targets: 0 }
+			{
+				"targets": [16,17],
+				"createdCell": function (td, cellData, rowData, row, col) {
+					var pValue = parseFloat(cellData);
+					// if the target is <= 15, then remove the text
+					var string = pValue.toFixed(2).toString();
+					if (string.length < 5) {
+						// Add a non-breaking space (invisible but retains width)
+						string = '\u00A0' + '\u00A0' + string;
+					}
+					$(td).text(string);
+					
+				}
+			},
+			{ width: '20%', targets: 0, className: 'model-names' },
+			// set font size of last two columns
+			{ width: '5%', targets: 16, className: 'avg-cost' },
+			{ width: '5%', targets: 17, className: 'avg-cost' },
 		],
 	});
 	table.columns.adjust().draw();
@@ -253,10 +268,10 @@ function getColor(value) {
 	var green = 255;
 	// define 5 color levels, 0-20, 20-40, 40-60, 60-80, 80-100
 	// give the same color for the same level
-	if (value >= 75) {
+	if (value >= 66.6666) {
 		red = 0;
 		green = 255;
-	} else if (value >= 25) {
+	} else if (value >= 33.333333) {
 		red = 255;
 		green = 255;
 	} else {

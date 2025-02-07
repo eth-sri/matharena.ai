@@ -1,5 +1,10 @@
 body {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Helvetica';
+}
+
+.footer {
+  padding-bottom: 30px !important;
+  padding-top: 30px !important;
 }
 
 .footer .icon-link {
@@ -23,7 +28,7 @@ body {
 }
 
 .teaser {
-  font-family: 'Google Sans', sans-serif;
+  font-family: 'Helvetica';
 }
 
 .logo {
@@ -32,7 +37,7 @@ body {
 }
 
 .publication-title {
-    font-family: 'Google Sans', sans-serif;
+    font-family: 'Helvetica';
     font-size: 2.9rem !important;
 }
 
@@ -126,7 +131,7 @@ div.dt-container .dt-paging .current {
 }
 
 .publication-authors {
-    font-family: 'Google Sans', sans-serif;
+    font-family: 'Helvetica';
 }
 
 .publication-venue {
@@ -216,4 +221,25 @@ div.dt-container .dt-paging .current {
 
 #myTopTable {
   font-size: 0.8rem;
+}
+
+.competition-name, .model-name {
+  text-align: center; 
+  font-size: 1.1rem !important;
+  font-family: "Helvetica" !important;
+  font-variant: normal !important;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Latin+Modern+Roman&display=swap');
+
+.model-names {
+  font-size: 1.0rem !important;
+  font-family: "Latin Modern Roman", serif;
+  /* font-variant: small-caps; */
+}
+
+
+.avg-cost {
+  font-size: 1.0rem !important;
 }
