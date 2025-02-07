@@ -3,124 +3,192 @@ window.HELP_IMPROVE_VIDEOJS = false;
 var result_data = [
     {
         "question": 1,
-        "gemini-2.0-flash": 100.0,
-        "gpt-4o": 25.0,
         "o3-mini": 100.0,
-        "DeepSeek-R1": 100.0
+        "o1": 100.0,
+        "DeepSeek-R1": 100.0,
+        "DeepSeek-R1-Distill-Qwen-14B": 100.0,
+        "DeepSeek-R1-Distill-Llama-70B": 100.0,
+        "DeepSeek-R1-Distill-Qwen-1.5B": 100.0,
+        "gpt-4o": 100.0,
+        "claude-3.5-sonnet": 25.0
     },
     {
         "question": 2,
-        "gemini-2.0-flash": 100.0,
-        "gpt-4o": 75.0,
         "o3-mini": 100.0,
-        "DeepSeek-R1": 100.0
+        "o1": 100.0,
+        "DeepSeek-R1": 100.0,
+        "DeepSeek-R1-Distill-Qwen-14B": 50.0,
+        "DeepSeek-R1-Distill-Llama-70B": 50.0,
+        "DeepSeek-R1-Distill-Qwen-1.5B": 0.0,
+        "gpt-4o": 0.0,
+        "claude-3.5-sonnet": 0.0
     },
     {
         "question": 3,
-        "gemini-2.0-flash": 50.0,
-        "gpt-4o": 25.0,
         "o3-mini": 100.0,
-        "DeepSeek-R1": 100.0
+        "o1": 100.0,
+        "DeepSeek-R1": 100.0,
+        "DeepSeek-R1-Distill-Qwen-14B": 100.0,
+        "DeepSeek-R1-Distill-Llama-70B": 100.0,
+        "DeepSeek-R1-Distill-Qwen-1.5B": 100.0,
+        "gpt-4o": 25.0,
+        "claude-3.5-sonnet": 0.0
     },
     {
         "question": 4,
-        "gemini-2.0-flash": 100.0,
-        "gpt-4o": 100.0,
         "o3-mini": 100.0,
-        "DeepSeek-R1": 100.0
+        "o1": 100.0,
+        "DeepSeek-R1": 100.0,
+        "DeepSeek-R1-Distill-Qwen-14B": 100.0,
+        "DeepSeek-R1-Distill-Llama-70B": 100.0,
+        "DeepSeek-R1-Distill-Qwen-1.5B": 25.0,
+        "gpt-4o": 0.0,
+        "claude-3.5-sonnet": 0.0
     },
     {
         "question": 5,
-        "gemini-2.0-flash": 0.0,
+        "o3-mini": 75.0,
+        "o1": 100.0,
+        "DeepSeek-R1": 100.0,
+        "DeepSeek-R1-Distill-Qwen-14B": 100.0,
+        "DeepSeek-R1-Distill-Llama-70B": 75.0,
+        "DeepSeek-R1-Distill-Qwen-1.5B": 0.0,
         "gpt-4o": 0.0,
-        "o3-mini": 100.0,
-        "DeepSeek-R1": 100.0
+        "claude-3.5-sonnet": 0.0
     },
     {
         "question": 6,
-        "gemini-2.0-flash": 100.0,
-        "gpt-4o": 25.0,
         "o3-mini": 100.0,
-        "DeepSeek-R1": 100.0
+        "o1": 100.0,
+        "DeepSeek-R1": 100.0,
+        "DeepSeek-R1-Distill-Qwen-14B": 100.0,
+        "DeepSeek-R1-Distill-Llama-70B": 100.0,
+        "DeepSeek-R1-Distill-Qwen-1.5B": 100.0,
+        "gpt-4o": 0.0,
+        "claude-3.5-sonnet": 0.0
     },
     {
         "question": 7,
-        "gemini-2.0-flash": 100.0,
-        "gpt-4o": 50.0,
         "o3-mini": 100.0,
-        "DeepSeek-R1": 100.0
+        "o1": 75.0,
+        "DeepSeek-R1": 50.0,
+        "DeepSeek-R1-Distill-Qwen-14B": 0.0,
+        "DeepSeek-R1-Distill-Llama-70B": 0.0,
+        "DeepSeek-R1-Distill-Qwen-1.5B": 0.0,
+        "gpt-4o": 0.0,
+        "claude-3.5-sonnet": 0.0
     },
     {
         "question": 8,
-        "gemini-2.0-flash": 0.0,
+        "o3-mini": 100.0,
+        "o1": 50.0,
+        "DeepSeek-R1": 100.0,
+        "DeepSeek-R1-Distill-Qwen-14B": 75.0,
+        "DeepSeek-R1-Distill-Llama-70B": 50.0,
+        "DeepSeek-R1-Distill-Qwen-1.5B": 50.0,
         "gpt-4o": 0.0,
-        "o3-mini": 87.5,
-        "DeepSeek-R1": 75.0
+        "claude-3.5-sonnet": 0.0
     },
     {
         "question": 9,
-        "gemini-2.0-flash": 0.0,
-        "gpt-4o": 0.0,
         "o3-mini": 100.0,
-        "DeepSeek-R1": 100.0
+        "o1": 75.0,
+        "DeepSeek-R1": 75.0,
+        "DeepSeek-R1-Distill-Qwen-14B": 50.0,
+        "DeepSeek-R1-Distill-Llama-70B": 50.0,
+        "DeepSeek-R1-Distill-Qwen-1.5B": 0.0,
+        "gpt-4o": 75.0,
+        "claude-3.5-sonnet": 25.0
     },
     {
         "question": 10,
-        "gemini-2.0-flash": 0.0,
+        "o3-mini": 75.0,
+        "o1": 100.0,
+        "DeepSeek-R1": 25.0,
+        "DeepSeek-R1-Distill-Qwen-14B": 0.0,
+        "DeepSeek-R1-Distill-Llama-70B": 0.0,
+        "DeepSeek-R1-Distill-Qwen-1.5B": 0.0,
         "gpt-4o": 0.0,
-        "o3-mini": 100.0,
-        "DeepSeek-R1": 100.0
+        "claude-3.5-sonnet": 0.0
     },
     {
         "question": 11,
-        "gemini-2.0-flash": 0.0,
+        "o3-mini": 100.0,
+        "o1": 100.0,
+        "DeepSeek-R1": 25.0,
+        "DeepSeek-R1-Distill-Qwen-14B": 0.0,
+        "DeepSeek-R1-Distill-Llama-70B": 25.0,
+        "DeepSeek-R1-Distill-Qwen-1.5B": 0.0,
         "gpt-4o": 0.0,
-        "o3-mini": 62.5,
-        "DeepSeek-R1": 0.0
+        "claude-3.5-sonnet": 0.0
     },
     {
         "question": 12,
-        "gemini-2.0-flash": 0.0,
+        "o3-mini": 100.0,
+        "o1": 100.0,
+        "DeepSeek-R1": 100.0,
+        "DeepSeek-R1-Distill-Qwen-14B": 75.0,
+        "DeepSeek-R1-Distill-Llama-70B": 100.0,
+        "DeepSeek-R1-Distill-Qwen-1.5B": 0.0,
         "gpt-4o": 0.0,
-        "o3-mini": 0.0,
-        "DeepSeek-R1": 0.0
+        "claude-3.5-sonnet": 0.0
     },
     {
         "question": 13,
-        "gemini-2.0-flash": 50.0,
+        "o3-mini": 25.0,
+        "o1": 25.0,
+        "DeepSeek-R1": 0.0,
+        "DeepSeek-R1-Distill-Qwen-14B": 0.0,
+        "DeepSeek-R1-Distill-Llama-70B": 0.0,
+        "DeepSeek-R1-Distill-Qwen-1.5B": 0.0,
         "gpt-4o": 0.0,
-        "o3-mini": 100.0,
-        "DeepSeek-R1": 100.0
+        "claude-3.5-sonnet": 0.0
     },
     {
         "question": 14,
-        "gemini-2.0-flash": 0.0,
+        "o3-mini": 0.0,
+        "o1": 25.0,
+        "DeepSeek-R1": 0.0,
+        "DeepSeek-R1-Distill-Qwen-14B": 0.0,
+        "DeepSeek-R1-Distill-Llama-70B": 0.0,
+        "DeepSeek-R1-Distill-Qwen-1.5B": 0.0,
         "gpt-4o": 0.0,
-        "o3-mini": 62.5,
-        "DeepSeek-R1": 100.0
+        "claude-3.5-sonnet": 0.0
     },
     {
         "question": 15,
-        "gemini-2.0-flash": 0.0,
+        "o3-mini": 0.0,
+        "o1": 0.0,
+        "DeepSeek-R1": 0.0,
+        "DeepSeek-R1-Distill-Qwen-14B": 0.0,
+        "DeepSeek-R1-Distill-Llama-70B": 0.0,
+        "DeepSeek-R1-Distill-Qwen-1.5B": 0.0,
         "gpt-4o": 0.0,
-        "o3-mini": 100.0,
-        "DeepSeek-R1": 87.5
+        "claude-3.5-sonnet": 0.0
     },
     {
         "question": "Avg",
-        "gemini-2.0-flash": 40.00000000000001,
-        "gpt-4o": 20.0,
-        "o3-mini": 87.50000000000001,
-        "DeepSeek-R1": 84.16666666666667
+        "o3-mini": 78.33333333333334,
+        "o1": 76.66666666666669,
+        "DeepSeek-R1": 65.0,
+        "DeepSeek-R1-Distill-Qwen-14B": 50.00000000000001,
+        "DeepSeek-R1-Distill-Llama-70B": 50.0,
+        "DeepSeek-R1-Distill-Qwen-1.5B": 25.0,
+        "gpt-4o": 13.333333333333334,
+        "claude-3.5-sonnet": 3.3333333333333335
     },
     {
         "question": "Cost",
-        "gemini-2.0-flash": 0.022952,
-        "gpt-4o": 0.62633,
-        "o3-mini": 5.0773888000000005,
-        "DeepSeek-R1": 6.354445999999999
+        "o3-mini": 3.3047915999999997,
+        "o1": 42.47478,
+        "DeepSeek-R1": 4.90553,
+        "DeepSeek-R1-Distill-Qwen-14B": 1.1507616,
+        "DeepSeek-R1-Distill-Llama-70B": 1.3534620000000002,
+        "DeepSeek-R1-Distill-Qwen-1.5B": 0.1600641,
+        "gpt-4o": 0.5545100000000001,
+        "claude-3.5-sonnet": 0.534252
     }
-];
+]
 
 $(document).ready(function() {
     // Check for click events on the navbar burger icon
@@ -230,6 +298,9 @@ $(document).ready(function() {
 					if (col == 17) {
 						string = '$' + string;
 					}
+					if (col == 16) {
+						string = string + '%';
+					}
 					if (string.length < 5) {
 						// Add a non-breaking space (invisible but retains width)
 						string = '\u00A0' + '\u00A0' + string;
@@ -253,10 +324,10 @@ function getColor(value) {
 	var green = 255;
 	// define 5 color levels, 0-20, 20-40, 40-60, 60-80, 80-100
 	// give the same color for the same level
-	if (value >= 66.6666) {
+	if (value > 75) {
 		red = 0;
 		green = 255;
-	} else if (value >= 33.333333) {
+	} else if (value >= 25) {
 		red = 255;
 		green = 255;
 	} else {
