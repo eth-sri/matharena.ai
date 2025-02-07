@@ -256,3 +256,8 @@ div.dt-container .dt-paging .current {
 .avg-cost {
   font-size: 1.0rem !important;
 }
+
+#traces {
+  margin-top: 10px;
+  display: none;
+}

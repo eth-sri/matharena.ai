@@ -82,7 +82,7 @@
             <thead>
                 <tr>
                   <!-- <th rowspan="2" class="model-name">Model Name</th> -->
-                  <th colspan="18" class="competition-name">AIME I 2025</th>
+                  <th colspan="18" class="competition-name">AIME I 2025<br><i>Click on a model and a task to see traces</i></th>
                     <!-- <th colspan="1">o3-mini</th>
                     <th colspan="1">o1</th>
                     <th colspan="1">o1-mini</th>
@@ -96,27 +96,30 @@
                   <th colspan="1" class="model-name">Model Name</th>
                   <th colspan="1">Acc</th>
                   <th colspan="1">Cost</th>
-                  <th colspan="1">1</th>
-                  <th colspan="1">2</th>
-                  <th colspan="1">3</th>
-                  <th colspan="1">4</th>
-                  <th colspan="1">5</th>
-                  <th colspan="1">6</th>
-                  <th colspan="1">7</th>
-                  <th colspan="1">8</th>
-                  <th colspan="1">9</th>
-                  <th colspan="1">10</th>
-                  <th colspan="1">11</th>
-                  <th colspan="1">12</th>
-                  <th colspan="1">13</th>
-                  <th colspan="1">14</th>
-                  <th colspan="1">15</th>
+                  <th colspan="1"><a href="#" id="1" onclick="captureTask(1); return false;">1</a></th>
+                  <th colspan="1"><a href="#" id="2" onclick="captureTask(2); return false;">2</a></th>
+                  <th colspan="1"><a href="#" id="3" onclick="captureTask(3); return false;">3</a></th>
+                  <th colspan="1"><a href="#" id="4" onclick="captureTask(4); return false;">4</a></th>
+                  <th colspan="1"><a href="#" id="5" onclick="captureTask(5); return false;">5</a></th>
+                  <th colspan="1"><a href="#" id="6" onclick="captureTask(6); return false;">6</a></th>
+                  <th colspan="1"><a href="#" id="7" onclick="captureTask(7); return false;">7</a></th>
+                  <th colspan="1"><a href="#" id="8" onclick="captureTask(8); return false;">8</a></th>
+                  <th colspan="1"><a href="#" id="9" onclick="captureTask(9); return false;">9</a></th>
+                  <th colspan="1"><a href="#" id="10" onclick="captureTask(10); return false;">10</a></th>
+                  <th colspan="1"><a href="#" id="11" onclick="captureTask(11); return false;">11</a></th>
+                  <th colspan="1"><a href="#" id="12" onclick="captureTask(12); return false;">12</a></th>
+                  <th colspan="1"><a href="#" id="13" onclick="captureTask(13); return false;">13</a></th>
+                  <th colspan="1"><a href="#" id="14" onclick="captureTask(14); return false;">14</a></th>
+                  <th colspan="1"><a href="#" id="15" onclick="captureTask(15); return false;">15</a></th>
                   
               </tr>
             </thead>
             <tbody>
             </tbody>
         </table>
+
+        <div id="traces">
+          <!-- JS fills -->
         </div>
       </div>
       </div>
@@ -172,5 +175,6 @@
  data-cf-beacon='{"token": "68baeccd6f3e464aa6ad43275be4f8ca"}'>
 </script><!-- End Cloudflare Web Analytics -->
 
+<script src="static/js/traces.js"></script>
   </body>
   </html>

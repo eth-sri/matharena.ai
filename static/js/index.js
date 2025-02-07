@@ -248,7 +248,12 @@ $(document).ready(function() {
 	var table = $('#myTopTable').DataTable({
 		"data": transposed_data,
 		"columns": [
-	        { "data": "model_name" },
+	        { "data": "model_name",
+              "render": function(data, type, row, meta){
+                // Render the model name as a clickable link
+                return '<a id="' + data + '" onclick=captureModelName("'+ data +'")>'+ data +'</a>';
+                } 
+            },  
 			{ "data": "Avg" },
 			{ "data": "Cost" },
 			{ "data": "1" },
@@ -317,7 +322,7 @@ $(document).ready(function() {
 		],
 	});
 	table.columns.adjust().draw();
-	// table_here.columns.adjust().draw();
+
 })
 
 function getColor(value) {
@@ -345,4 +350,55 @@ function getColor(value) {
 	// 	red = 255;
 	// }
 	return 'rgba(' + red + ',' + green + ',0,0.2)';
+}
+
+function captureTask(task) {
+    var table = $('#myTopTable').DataTable();
+    var as = table.table().container().querySelectorAll("a");
+
+    for (var i = 0; i < as.length; i++) {
+        // find <a> element as a child of ths[i] 
+        if (as[i].id == window.currTask) {
+            as[i].style.color = "black";
+        }
+        if (as[i].id == task) {
+            as[i].style.color = "orange";
+        }
+    }
+
+    window.currTask = task; 
+    if (window.currModelName) {
+        updateTraces(window.currModelName, task);
+        document.getElementById("traces").style.display = "block";
+    }
+}
+
+function captureModelName(modelName) {
+    var table = $('#myTopTable').DataTable();
+    var as = table.table().container().querySelectorAll("a");
+
+    for (var i = 0; i < as.length; i++) {
+        // find <a> element as a child of ths[i] 
+        if (as[i].id == window.currModelName) {
+            as[i].style.color = "inherit"
+        }
+        if (as[i].id == modelName) {
+            as[i].style.color = "orange"
+        }
+    }
+
+    window.currModelName = modelName;
+    // if currTask exists show the interactions element 
+    if (window.currTask) {
+        updateTraces(modelName, window.currTask);
+        document.getElementById("traces").style.display = "block";
+    }
+
+}
+
+function updateTraces(modelName, task) {
+    console.log("Updating traces for model: " + modelName + " and task: " + task);
+    var header = document.createElement("h3");
+    header.innerHTML = modelName + " - " + task + traces[task].statement;
+    document.getElementById("traces").appendChild(header);
 }
