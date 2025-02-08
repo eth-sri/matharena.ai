@@ -358,7 +358,13 @@ div.dt-container .dt-paging .current {
   display: table-cell; /* Ensures proper table cell behavior */
   text-align: center;
   padding: 10px;
-  color: #0d50e1;
+  cursor: pointer;
+  border-bottom: 1px dashed gray;
+  /* color: #0d50e1; */
+}
+
+.tooltip:hover {
+  color: #276dff; /* Light blue text on hover */
 }
 
 /* Tooltip text */
