@@ -556,7 +556,7 @@ function updateTraces(model, task) {
     console.log("Updating traces for model: " + model + " and task: " + task);
     var heading = document.createElement("h2");
     heading.className = "tracesHeading";
-    heading.innerHTML = "Traces: " + model + " on Problem #" + task;
+    heading.innerHTML = "Solution: Model " + model + " for Problem #" + task;
     tracesBox.innerHTML = "";
     tracesBox.appendChild(heading);
 
@@ -610,7 +610,7 @@ function updateTraces(model, task) {
 
         var response_label = document.createElement("h4");
         response_label.style.fontWeight = "bold";
-        response_label.innerHTML = "Model Response";
+        response_label.innerHTML = "Full Model Solution";
         var response_box = document.createElement("div");
         response_box.className = "marked box response-box";
         response_box.innerHTML = modelTraces[i].solution;
