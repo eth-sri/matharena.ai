@@ -323,6 +323,10 @@ $(document).ready(function() {
 	});
 	table.columns.adjust().draw();
 
+
+    // default to open?
+    captureTask(1); 
+    captureModelName("o1");
 })
 
 function getColor(value) {
@@ -351,6 +355,7 @@ function getColor(value) {
 	// }
 	return 'rgba(' + red + ',' + green + ',0,0.2)';
 }
+
 
 function captureTask(task) {
     var table = $('#myTopTable').DataTable();
@@ -395,10 +400,109 @@ function captureModelName(modelName) {
     }
 
 }
+function openTab(evt, traceIdx) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+  
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+  
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+  
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    console.log("tab"+traceIdx);
+    document.getElementById("tab"+traceIdx).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
 
-function updateTraces(modelName, task) {
-    console.log("Updating traces for model: " + modelName + " and task: " + task);
-    var header = document.createElement("h3");
-    header.innerHTML = modelName + " - " + task + traces[task].statement;
-    document.getElementById("traces").appendChild(header);
+function updateTraces(model, task) {
+    tracesBox = document.getElementById("traces");
+
+    console.log("Updating traces for model: " + model + " and task: " + task);
+    var heading = document.createElement("h2");
+    heading.className = "tracesHeading";
+    heading.innerHTML = "Traces: " + model + " on task " + task;
+    tracesBox.innerHTML = "";
+    tracesBox.appendChild(heading);
+
+    // For now only interaction 0 from array 
+    // create a div 
+    var problem_label = document.createElement("h4");
+    problem_label.innerHTML = "Problem";
+    var problem_box = document.createElement("div");
+    problem_box.className = "marked box problem-box";
+    problem_box.innerHTML = traces[task].statement;
+    tracesBox.appendChild(problem_label);
+    tracesBox.appendChild(problem_box);
+
+    // Actual model traces start here 
+    var modelTraces = traces[task]["models"][model];
+    var numTraces = modelTraces.length;
+
+    // Add tabs 
+    var tab = document.createElement("div");
+    tab.className = "tab";
+    // for each in numTraces create a tablinks 
+    for (let i = 0; i < numTraces; i++) {
+        (function(currentIndex) {
+            var tablink = document.createElement("button");
+            tablink.className = "tablinks";
+            let idx = i+1;
+            tablink.onclick = function(event) {
+                openTab(event, i);
+            } 
+            tablink.innerHTML = "Run " + idx;
+            tab.appendChild(tablink);
+        })(i);
+    }
+    tracesBox.appendChild(tab);
+
+    // Now make divs with tabcontent 
+    for (var i = 0; i < numTraces; i++) {
+        var tabcontent = document.createElement("div");
+        tabcontent.className = "tabcontent";
+        tabcontent.id = "tab" + i;
+
+        var response_label = document.createElement("h4");
+        response_label.style.fontWeight = "bold";
+        response_label.innerHTML = "Model Response";
+        var response_box = document.createElement("div");
+        response_box.className = "marked box response-box";
+        response_box.innerHTML = modelTraces[i].solution;
+
+        var parsed_answer_label = document.createElement("h4");
+        parsed_answer_label.style.fontWeight = "bold";
+        parsed_answer_label.innerHTML = "Parsed Answer";
+        var parsed_answer_box = document.createElement("div");
+        parsed_answer_box.innerHTML = modelTraces[i].parsed_answer;
+        let ok_cls = (modelTraces[i].parsed_answer==traces[task].gold_answer) ? "correct" : "incorrect";
+        parsed_answer_box.className = "marked box parsed-answer-box " + ok_cls;
+
+        var solution_label = document.createElement("h4");
+        solution_label.style.fontWeight = "bold";
+        solution_label.innerHTML = "Correct Answer";
+        var solution_box = document.createElement("div");
+        solution_box.className = "marked box solution-box";
+        solution_box.innerHTML = traces[task].gold_answer;
+
+        tabcontent.appendChild(response_label);
+        tabcontent.appendChild(response_box);
+        tabcontent.appendChild(parsed_answer_label);
+        tabcontent.appendChild(parsed_answer_box);
+        tabcontent.appendChild(solution_label);
+        tabcontent.appendChild(solution_box);
+        tracesBox.appendChild(tabcontent);
+    }
+    // open manually fist tab 
+    document.getElementById("tab0").style.display = "block";
+    document.getElementsByClassName("tablinks")[0].className += " active";
+    
+    MathJax.typesetPromise();
 }

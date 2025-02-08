@@ -32,6 +32,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-components-web/14.0.0/material-components-web.min.js">
   <link rel="stylesheet" href="static/css/index.css">
   
+  <script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$']]
+        }
+    };
+</script>
+
   <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.0/es5/tex-mml-chtml.js">
 </script>
@@ -117,16 +125,27 @@
             <tbody>
             </tbody>
         </table>
-
-        <div id="traces">
-          <!-- JS fills -->
-        </div>
       </div>
       </div>
       </div>
 </section>
 
-<section class="section hero">
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+
+        <div id="traces">
+          <!-- JS fills -->
+        </div>
+
+      </div>
+      </div>
+      </div>
+</section>
+
+<section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-ninety">
