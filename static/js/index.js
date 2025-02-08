@@ -139,7 +139,7 @@ var result_data = [
     },
     {
         "o3-mini (high)": 100.0,
-        "o1 (medium)": 75.0,
+        "o1 (medium)": 100.0,
         "o3-mini (medium)": 100.0,
         "DeepSeek-R1": 75.0,
         "o3-mini (low)": 25.0,
@@ -206,7 +206,7 @@ var result_data = [
         "question": 12
     },
     {
-        "o3-mini (high)": 25.0,
+        "o3-mini (high)": 50.0,
         "o1 (medium)": 25.0,
         "o3-mini (medium)": 0.0,
         "DeepSeek-R1": 0.0,
@@ -257,8 +257,8 @@ var result_data = [
         "question": 15
     },
     {
-        "o3-mini (high)": 78.33333333333334,
-        "o1 (medium)": 76.66666666666669,
+        "o3-mini (high)": 80.0,
+        "o1 (medium)": 78.33333333333334,
         "o3-mini (medium)": 73.33333333333333,
         "DeepSeek-R1": 65.0,
         "o3-mini (low)": 53.33333333333333,
@@ -274,8 +274,8 @@ var result_data = [
         "question": "Avg"
     },
     {
-        "o3-mini (high)": 3.3047915999999997,
-        "o1 (medium)": 42.47478,
+        "o3-mini (high)": 3.1928864,
+        "o1 (medium)": 44.39680500000001,
         "o3-mini (medium)": 1.669096,
         "DeepSeek-R1": 4.90553,
         "o3-mini (low)": 0.6224152000000002,
