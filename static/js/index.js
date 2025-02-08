@@ -484,6 +484,20 @@ $(document).ready(function() {
     // default to open?
     //captureTask(1); 
     //captureModelName("o1 (medium)");
+
+    // Add FAQ collapse functionality
+    $('.faq-question').click(function() {
+        // Toggle the active class on the question
+        $(this).toggleClass('is-active');
+        
+        // Toggle the visibility of the answer
+        var answer = $(this).next('.faq-answer');
+        if (answer.is(':visible')) {
+            answer.slideUp();
+        } else {
+            answer.slideDown();
+        }
+    });
 })
 
 function getColor(value) {

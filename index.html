@@ -157,28 +157,111 @@
 </section>
 
 <section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-ninety">
-        <h2 class="title is-2">What is MathArena?</h2>
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-ninety">
+          <h2 class="title is-2">What is MathArena?</h2>
+          <div class="content has-text-justified">
+            <!-- <div class="caption">
+              We pit LLMs against each other and humans on recent math competitions and olympiads, providing the possibility for uncontaminated model evaluation. 
+              We hope that this will lead to better understanding of the capabilities and limitations of LLMs on math tasks.
+            </div> -->
+            <p>
+              MathArena is a platform for evaluation of LLMs on the latest math competitions and olympiads.
+              Our mission is rigorous assessment of the reasoning and generalization capabilities of LLMs on new math problems which the models have not seen during training.
+              To ensure a fair and uncontaminated evaluation, we exclusively test models on competitions that took place after their release, avoiding retroactive assessments on potentially leaked or pre-trained material.
+              By performing standardized evaluation we ensure model scores are actually comparable and are not dependent on the specific evaluation setup of the model provider.
+              <br><br>
+              To show the model performance, we publish a leaderboard for each competition showing the scores of different models individual problems.
+              Additionally, we will include a main table that includes model performance on all competitions.
+              To evaluate performance, we run each model 4 times on each problem, computing the average score and the cost of the model (in USD) across all runs.
+              <!-- To make the results easier to interpret, we use a color-coded system in the table: green problems are solved more than 75% of the time, yellow problems are solved 25-75% of the time, and red problems are solved less than 25% of the time. -->
+              <br><br>
+              We are committed to make our evaluation code and data publicly available.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-ninety">
+        <!-- Add FAQ section -->
+        <h2 class="title is-2">Frequently Asked Questions</h2>
         <div class="content has-text-justified">
-          <!-- <div class="caption">
-            We pit LLMs against each other and humans on recent math competitions and olympiads, providing the possibility for uncontaminated model evaluation. 
-            We hope that this will lead to better understanding of the capabilities and limitations of LLMs on math tasks.
-          </div> -->
-          <p>
-            MathArena is a platform for evaluation of LLMs on the latest math competitions and olympiads.
-            Our mission is rigorous assessment of the reasoning and generalization capabilities of LLMs on new math problems which the models have not seen during training.
-            To ensure a fair and uncontaminated evaluation, we exclusively test models on competitions that took place after their release, avoiding retroactive assessments on potentially leaked or pre-trained material.
-            By performing standardized evaluation we ensure model scores are actually comparable and are not dependent on the specific evaluation setup of the model provider.
-            <br><br>
-            To show the model performance, we publish a leaderboard for each competition showing the scores of different models individual problems.
-            Additionally, we will include a main table that includes model performance on all competitions.
-            To evaluate performance, we run each model 4 times on each problem, computing the average score and the cost of the model (in USD) across all runs.
-            To make the results easier to interpret, we use a color-coded system in the table: green problems are solved more than 75% of the time, yellow problems are solved 25-75% of the time, and red problems are solved less than 25% of the time.
-            <br><br>
-            We are committed to make our evaluation code and data publicly available.
-          </p>
+          <div class="faq-container">
+            <div class="faq-item">
+              <div class="faq-question">
+                How exactly do you compute accuracy?
+              </div>
+              <div class="faq-answer" style="display: none;">
+                We compute the accuracy of a model by prompting it to solve each problem 4 times and computing the success rate for this problem by dividing the number of correct solutions by 4.
+                This corresponds to the pass@1 metric estimated using 4 samples. The final accuracy is the average pass@1 over all problems. We do not perform majority voting or other criteria like pass@K.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                What do the colors in the table mean?
+              </div>
+              <div class="faq-answer" style="display: none;">
+                The colors indicate success rates of the problems:
+                <ul>
+                  <li>Green: Problem solved >75% of the time</li>
+                  <li>Yellow: Problem solved 25-75% of the time</li>
+                  <li>Red: Problem solved <25% of the time</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                How is the cost calculated?
+              </div>
+              <div class="faq-answer" style="display: none;">
+                The cost shows the total cost of evaluating the model on the entire benchmark (all problems and all repetitions). It is calculated based on the API pricing for each model.
+                For open-source models, costs can vary significantly depending on the chosen API provider and our results may not always be achieved using the most cost-effective option.
+                In particular, for DeepSeek models we use Together API as we found it to be the most reliable endpoint, but it is more expensive than DeepSeek's own API.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                How do you know that your problems are not in the training data?
+              </div>
+              <div class="faq-answer" style="display: none;">
+                First, we always evaluate models on new competitions immediately as the problems are released, guaranteeing that the knowledge cutoff of the model is before the date of the competition. 
+                While it is not impossible to rule out that evaluated problems or their variants are in the training data (e.g. because they appeared in another competition, see <a href="https://x.com/DimitrisPapail/status/1887977460664352795" style="color: blue">here</a>), the organizers of competitions such as AIME
+                always try to ensure highest quality of their problemset. So we believe that the problems are sufficiently novel that it is possible to evaluate generalization capabilities of the models.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              Can you evaluate more models?
+            </div>
+            <div class="faq-answer" style="display: none;">
+              Yes, we are planning to add more models while keeping the table concise and informative. Some of the models are difficult to evaluate due to the rate limits in particular APIs, but we will try to add
+              most well known ones. We are also going to release our evaluation scripts to enable the community to evaluate their models.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              Are you going to release data and code?
+            </div>
+            <div class="faq-answer" style="display: none;">
+              Yes, we are going to open source our evaluation scripts and data in the next few days.
+            </div>
+          </div>
+
+          </div>
         </div>
       </div>
     </div>
