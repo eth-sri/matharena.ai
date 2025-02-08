@@ -624,10 +624,10 @@ function updateTraces(model, task) {
         parsed_answer_box.className = "marked box parsed-answer-box " + ok_cls;
 
 
-        tabcontent.appendChild(response_label);
-        tabcontent.appendChild(response_box);
         tabcontent.appendChild(parsed_answer_label);
         tabcontent.appendChild(parsed_answer_box);
+        tabcontent.appendChild(response_label);
+        tabcontent.appendChild(response_box);
         tracesBox.appendChild(tabcontent);
     }
     // open manually fist tab 
