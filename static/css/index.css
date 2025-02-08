@@ -258,8 +258,11 @@ div.dt-container .dt-paging .current {
 }
 
 #traces {
-  margin-top: 10px;
   display: none;
+  width: 100%;
+  overflow-x: auto;
+  height: 100%;
+  margin: 0% 2%;
 }
 
 .box {
@@ -277,7 +280,6 @@ div.dt-container .dt-paging .current {
 }
 .solution-box {
   background-color: #ffd700;
-  border: 2px solid;
 }
 .response-box {
   background-color: #ffe4c8;
@@ -340,4 +342,9 @@ div.dt-container .dt-paging .current {
   font-size: 20px; 
   text-align: center;
   margin: auto;
+  color: #276dff;
+}
+
+#tracesHint {
+  color: #276dff;
 }

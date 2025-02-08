@@ -353,7 +353,7 @@ $(document).ready(function() {
 	        { "data": "model_name",
               "render": function(data, type, row, meta){
                 // Render the model name as a clickable link
-                return '<a id="' + data + '" onclick=captureModelName("'+ data +'")>'+ data +'</a>';
+                return '<a id="' + data.replace(" ", "_") + '">'+ data +'</a>';
                 } 
             },  
 			{ "data": "Avg" },
@@ -425,10 +425,31 @@ $(document).ready(function() {
 	});
 	table.columns.adjust().draw();
 
+    // set up captureTask and captureModelName links 
+
+    // for every row in table myTopTable's tbody take the first td and make it clickable 
+    // using onclick 
+    var rows = table.table().container().querySelectorAll("tbody tr");
+    for (var i = 0; i < rows.length; i++) {
+        var td = rows[i].querySelector("td");
+        td.onclick = function() {
+            var modelName = this.querySelector("a").innerHTML;
+            captureModelName(modelName.replace(" ", "_"));
+        }
+    }
+    // for every th after the first 3 do the same 
+    var ths = table.table().container().querySelectorAll("thead th");
+    for (var i = 3; i < ths.length; i++) {
+        ths[i].onclick = function() {
+            var task = this.querySelector("a").innerHTML;
+            captureTask(task);
+        }
+    }
+
 
     // default to open?
-    captureTask(1); 
-    captureModelName("o1");
+    //captureTask(1); 
+    //captureModelName("o1");
 })
 
 function getColor(value) {
@@ -469,14 +490,14 @@ function captureTask(task) {
             as[i].style.color = "black";
         }
         if (as[i].id == task) {
-            as[i].style.color = "orange";
+            as[i].style.color = "#276dff";
         }
     }
 
     window.currTask = task; 
     if (window.currModelName) {
         updateTraces(window.currModelName, task);
-        document.getElementById("traces").style.display = "block";
+        document.getElementById("traces").style.display = "inline-block";
     }
 }
 
@@ -488,9 +509,13 @@ function captureModelName(modelName) {
         // find <a> element as a child of ths[i] 
         if (as[i].id == window.currModelName) {
             as[i].style.color = "inherit"
+            // remove bold 
+            as[i].style.fontWeight = "normal";
         }
         if (as[i].id == modelName) {
-            as[i].style.color = "orange"
+            as[i].style.color = "#276dff"
+            // make bold
+            as[i].style.fontWeight = "bold";
         }
     }
 
@@ -498,7 +523,7 @@ function captureModelName(modelName) {
     // if currTask exists show the interactions element 
     if (window.currTask) {
         updateTraces(modelName, window.currTask);
-        document.getElementById("traces").style.display = "block";
+        document.getElementById("traces").style.display = "inline-block";
     }
 
 }
@@ -519,7 +544,6 @@ function openTab(evt, traceIdx) {
     }
   
     // Show the current tab, and add an "active" class to the button that opened the tab
-    console.log("tab"+traceIdx);
     document.getElementById("tab"+traceIdx).style.display = "block";
     evt.currentTarget.className += " active";
   }
@@ -527,10 +551,12 @@ function openTab(evt, traceIdx) {
 function updateTraces(model, task) {
     tracesBox = document.getElementById("traces");
 
+    model = model.replace("_", " ");
+
     console.log("Updating traces for model: " + model + " and task: " + task);
     var heading = document.createElement("h2");
     heading.className = "tracesHeading";
-    heading.innerHTML = "Traces: " + model + " on task " + task;
+    heading.innerHTML = "Traces: " + model + " on Problem #" + task;
     tracesBox.innerHTML = "";
     tracesBox.appendChild(heading);
 
@@ -538,11 +564,21 @@ function updateTraces(model, task) {
     // create a div 
     var problem_label = document.createElement("h4");
     problem_label.innerHTML = "Problem";
+    problem_label.style.fontWeight = "bold";
     var problem_box = document.createElement("div");
     problem_box.className = "marked box problem-box";
     problem_box.innerHTML = traces[task].statement;
     tracesBox.appendChild(problem_label);
     tracesBox.appendChild(problem_box);
+
+    var solution_label = document.createElement("h4");
+    solution_label.style.fontWeight = "bold";
+    solution_label.innerHTML = "Correct Answer";
+    var solution_box = document.createElement("div");
+    solution_box.className = "marked box solution-box";
+    solution_box.innerHTML = traces[task].gold_answer;
+    tracesBox.appendChild(solution_label);
+    tracesBox.appendChild(solution_box);
 
     // Actual model traces start here 
     var modelTraces = traces[task]["models"][model];
@@ -587,19 +623,11 @@ function updateTraces(model, task) {
         let ok_cls = (modelTraces[i].parsed_answer==traces[task].gold_answer) ? "correct" : "incorrect";
         parsed_answer_box.className = "marked box parsed-answer-box " + ok_cls;
 
-        var solution_label = document.createElement("h4");
-        solution_label.style.fontWeight = "bold";
-        solution_label.innerHTML = "Correct Answer";
-        var solution_box = document.createElement("div");
-        solution_box.className = "marked box solution-box";
-        solution_box.innerHTML = traces[task].gold_answer;
 
         tabcontent.appendChild(response_label);
         tabcontent.appendChild(response_box);
         tabcontent.appendChild(parsed_answer_label);
         tabcontent.appendChild(parsed_answer_box);
-        tabcontent.appendChild(solution_label);
-        tabcontent.appendChild(solution_box);
         tracesBox.appendChild(tabcontent);
     }
     // open manually fist tab 
