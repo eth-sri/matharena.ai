@@ -311,7 +311,7 @@ var result_data = [
         "o3-mini (medium)": 1.669096,
         "DeepSeek-R1": 4.90553,
         "o3-mini (low)": 0.6224152000000002,
-        "DeepSeek-R1-Distill-Qwen-32B": 5.193769,
+        "DeepSeek-R1-Distill-Qwen-32B": "$0.00*",
         "gemini-2.0-flash-thinking": 0,
         "DeepSeek-R1-Distill-Qwen-14B": 1.1507616,
         "DeepSeek-R1-Distill-Llama-70B": 1.3534620000000002,
@@ -349,9 +349,10 @@ $(document).ready(function() {
 			if (key == "question") {
 				continue;
 			}
-			if (i >= 15) {
+            // if i>=15 and it's a number, round to 2 decimal places
+			if (i >= 15 && typeof result_data[i][key] == "number") {
 				result_data[i][key] = Math.round(result_data[i][key] * 100) / 100;
-			} else {
+			} else if (i < 15) {
 				result_data[i][key] = Math.round(result_data[i][key]);
 			}
 		}
@@ -434,21 +435,23 @@ $(document).ready(function() {
 			{
 				"targets": [1,2],
 				"createdCell": function (td, cellData, rowData, row, col) {
+                    // check if cellData includes *, if so skip
+                    if (typeof cellData == "number") {
 					var pValue = parseFloat(cellData);
-					// if the target is <= 15, then remove the text
-					var string = pValue.toFixed(2).toString();
-					if (col == 2) {
-						string = '$' + string;
-					}
-					if (col == 1) {
-						string = string + '%';
-					}
-					if (string.length < 6) {
-						// Add a non-breaking space (invisible but retains width)
-						string = '\u00A0' + '\u00A0' + string;
-					}
-					$(td).text(string);
-					
+                        // if the target is <= 15, then remove the text
+                        var string = pValue.toFixed(2).toString();
+                        if (col == 2) {
+                            string = '$' + string;
+                        }
+                        if (col == 1) {
+                            string = string + '%';
+                        }
+                        if (string.length < 6) {
+                            // Add a non-breaking space (invisible but retains width)
+                            string = '\u00A0' + '\u00A0' + string;
+                        }
+                        $(td).text(string);
+                    }
 				}
 			},
 			{ width: '20%', targets: 0, className: 'model-names' },
