@@ -348,3 +348,7 @@ div.dt-container .dt-paging .current {
 #tracesHint {
   color: #276dff;
 }
+
+.target { 
+  border: 3px solid #276dff !important;
+}

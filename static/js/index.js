@@ -549,11 +549,46 @@ function openTab(evt, traceIdx) {
   }
 
 function updateTraces(model, task) {
+    model = model.replace("_", " ");
+    // for every th after the first 3 do the same 
+    let table = $('#myTopTable').DataTable();
+    var ths = table.table().container().querySelectorAll("thead th");
+    for (var i = 4; i < ths.length; i++) {
+        if (ths[i].querySelector("a").innerHTML == task) {
+            var taskIdx = i; 
+            break; 
+        }
+    }
+
+    // get the main table and find the row with name "model" and column with id "task" 
+    var rows = table.table().container().querySelectorAll("tbody tr");
+    for (var i = 0; i < rows.length; i++) {
+        var td = rows[i].querySelector("td");
+        for (var j = 0; j < td.parentElement.children.length; j++) {
+            var cell = td.parentElement.children[j];
+            cell.classList.remove("target");
+        }
+    }
+
+    for (var i = 0; i < rows.length; i++) {
+        var td = rows[i].querySelector("td");
+        if (td.querySelector("a").innerHTML == model) {
+            // found this row now iterate over it's tds 
+            for (var j = 0; j < td.parentElement.children.length; j++) {
+                if (j+1 == taskIdx) {
+                    var cell = td.parentElement.children[j];
+                    // add class "target" to this cell
+                    cell.classList.add("target"); 
+                }
+            }
+        }
+    }
+
+
+
     tracesBox = document.getElementById("traces");
 
-    model = model.replace("_", " ");
 
-    console.log("Updating traces for model: " + model + " and task: " + task);
     var heading = document.createElement("h2");
     heading.className = "tracesHeading";
     heading.innerHTML = "Solution: Model " + model + " for Problem #" + task;
