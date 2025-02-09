@@ -311,14 +311,14 @@ var result_data = [
         "o3-mini (medium)": 1.669096,
         "DeepSeek-R1": 4.90553,
         "o3-mini (low)": 0.6224152000000002,
-        "DeepSeek-R1-Distill-Qwen-32B": "$0.00*",
-        "gemini-2.0-flash-thinking": 0,
+        "DeepSeek-R1-Distill-Qwen-32B": 5.193769,
+        "gemini-2.0-flash-thinking": "N/A",
         "DeepSeek-R1-Distill-Qwen-14B": 1.1507616,
         "DeepSeek-R1-Distill-Llama-70B": 1.3534620000000002,
         "QwQ-32B-Preview": 0.5826876,
-        "gemini-2.0-flash": 0,
+        "gemini-2.0-flash": 0.0568592,
         "DeepSeek-V3": 0.19196624999999998,
-        "gemini-2.0-pro": 0,
+        "gemini-2.0-pro": 0.8330700000000001,
         "DeepSeek-R1-Distill-Qwen-1.5B": 0.1600641,
         "gpt-4o": 0.5545100000000001,
         "claude-3.5-sonnet": 0.534252,
@@ -451,6 +451,8 @@ $(document).ready(function() {
                             string = '\u00A0' + '\u00A0' + string;
                         }
                         $(td).text(string);
+                    } else if (cellData == "N/A") {
+                        $(td).text('\u00A0' +'\u00A0' + '\u00A0' + "N/A");
                     }
 				}
 			},
