@@ -1,331 +1,5 @@
 window.HELP_IMPROVE_VIDEOJS = false;
 
-var result_data = [
-    {
-        "o3-mini (high)": 100.0,
-        "o1 (medium)": 100.0,
-        "o3-mini (medium)": 100.0,
-        "DeepSeek-R1": 100.0,
-        "o3-mini (low)": 100.0,
-        "DeepSeek-R1-Distill-Qwen-32B": 100.0,
-        "gemini-2.0-flash-thinking": 100.0,
-        "DeepSeek-R1-Distill-Qwen-14B": 100.0,
-        "DeepSeek-R1-Distill-Llama-70B": 100.0,
-        "QwQ-32B-Preview": 100.0,
-        "gemini-2.0-flash": 100.0,
-        "DeepSeek-V3": 100.0,
-        "gemini-2.0-pro": 100.0,
-        "DeepSeek-R1-Distill-Qwen-1.5B": 100.0,
-        "gpt-4o": 100.0,
-        "claude-3.5-sonnet": 25.0,
-        "question": 1
-    },
-    {
-        "o3-mini (high)": 100.0,
-        "o1 (medium)": 100.0,
-        "o3-mini (medium)": 100.0,
-        "DeepSeek-R1": 100.0,
-        "o3-mini (low)": 100.0,
-        "DeepSeek-R1-Distill-Qwen-32B": 50.0,
-        "gemini-2.0-flash-thinking": 0.0,
-        "DeepSeek-R1-Distill-Qwen-14B": 50.0,
-        "DeepSeek-R1-Distill-Llama-70B": 50.0,
-        "QwQ-32B-Preview": 25.0,
-        "gemini-2.0-flash": 0.0,
-        "DeepSeek-V3": 0.0,
-        "gemini-2.0-pro": 0.0,
-        "DeepSeek-R1-Distill-Qwen-1.5B": 0.0,
-        "gpt-4o": 0.0,
-        "claude-3.5-sonnet": 0.0,
-        "question": 2
-    },
-    {
-        "o3-mini (high)": 100.0,
-        "o1 (medium)": 100.0,
-        "o3-mini (medium)": 100.0,
-        "DeepSeek-R1": 100.0,
-        "o3-mini (low)": 100.0,
-        "DeepSeek-R1-Distill-Qwen-32B": 100.0,
-        "gemini-2.0-flash-thinking": 100.0,
-        "DeepSeek-R1-Distill-Qwen-14B": 100.0,
-        "DeepSeek-R1-Distill-Llama-70B": 100.0,
-        "QwQ-32B-Preview": 100.0,
-        "gemini-2.0-flash": 100.0,
-        "DeepSeek-V3": 50.0,
-        "gemini-2.0-pro": 75.0,
-        "DeepSeek-R1-Distill-Qwen-1.5B": 100.0,
-        "gpt-4o": 25.0,
-        "claude-3.5-sonnet": 0.0,
-        "question": 3
-    },
-    {
-        "o3-mini (high)": 100.0,
-        "o1 (medium)": 100.0,
-        "o3-mini (medium)": 100.0,
-        "DeepSeek-R1": 100.0,
-        "o3-mini (low)": 100.0,
-        "DeepSeek-R1-Distill-Qwen-32B": 100.0,
-        "gemini-2.0-flash-thinking": 100.0,
-        "DeepSeek-R1-Distill-Qwen-14B": 100.0,
-        "DeepSeek-R1-Distill-Llama-70B": 100.0,
-        "QwQ-32B-Preview": 100.0,
-        "gemini-2.0-flash": 100.0,
-        "DeepSeek-V3": 100.0,
-        "gemini-2.0-pro": 100.0,
-        "DeepSeek-R1-Distill-Qwen-1.5B": 25.0,
-        "gpt-4o": 0.0,
-        "claude-3.5-sonnet": 0.0,
-        "question": 4
-    },
-    {
-        "o3-mini (high)": 75.0,
-        "o1 (medium)": 100.0,
-        "o3-mini (medium)": 75.0,
-        "DeepSeek-R1": 100.0,
-        "o3-mini (low)": 100.0,
-        "DeepSeek-R1-Distill-Qwen-32B": 100.0,
-        "gemini-2.0-flash-thinking": 100.0,
-        "DeepSeek-R1-Distill-Qwen-14B": 100.0,
-        "DeepSeek-R1-Distill-Llama-70B": 75.0,
-        "QwQ-32B-Preview": 0.0,
-        "gemini-2.0-flash": 0.0,
-        "DeepSeek-V3": 0.0,
-        "gemini-2.0-pro": 0.0,
-        "DeepSeek-R1-Distill-Qwen-1.5B": 0.0,
-        "gpt-4o": 0.0,
-        "claude-3.5-sonnet": 0.0,
-        "question": 5
-    },
-    {
-        "o3-mini (high)": 100.0,
-        "o1 (medium)": 100.0,
-        "o3-mini (medium)": 100.0,
-        "DeepSeek-R1": 100.0,
-        "o3-mini (low)": 100.0,
-        "DeepSeek-R1-Distill-Qwen-32B": 100.0,
-        "gemini-2.0-flash-thinking": 100.0,
-        "DeepSeek-R1-Distill-Qwen-14B": 100.0,
-        "DeepSeek-R1-Distill-Llama-70B": 100.0,
-        "QwQ-32B-Preview": 100.0,
-        "gemini-2.0-flash": 100.0,
-        "DeepSeek-V3": 75.0,
-        "gemini-2.0-pro": 100.0,
-        "DeepSeek-R1-Distill-Qwen-1.5B": 100.0,
-        "gpt-4o": 0.0,
-        "claude-3.5-sonnet": 0.0,
-        "question": 6
-    },
-    {
-        "o3-mini (high)": 100.0,
-        "o1 (medium)": 75.0,
-        "o3-mini (medium)": 50.0,
-        "DeepSeek-R1": 50.0,
-        "o3-mini (low)": 50.0,
-        "DeepSeek-R1-Distill-Qwen-32B": 25.0,
-        "gemini-2.0-flash-thinking": 0.0,
-        "DeepSeek-R1-Distill-Qwen-14B": 0.0,
-        "DeepSeek-R1-Distill-Llama-70B": 0.0,
-        "QwQ-32B-Preview": 0.0,
-        "gemini-2.0-flash": 0.0,
-        "DeepSeek-V3": 0.0,
-        "gemini-2.0-pro": 0.0,
-        "DeepSeek-R1-Distill-Qwen-1.5B": 0.0,
-        "gpt-4o": 0.0,
-        "claude-3.5-sonnet": 0.0,
-        "question": 7
-    },
-    {
-        "o3-mini (high)": 100.0,
-        "o1 (medium)": 50.0,
-        "o3-mini (medium)": 100.0,
-        "DeepSeek-R1": 100.0,
-        "o3-mini (low)": 100.0,
-        "DeepSeek-R1-Distill-Qwen-32B": 75.0,
-        "gemini-2.0-flash-thinking": 100.0,
-        "DeepSeek-R1-Distill-Qwen-14B": 75.0,
-        "DeepSeek-R1-Distill-Llama-70B": 50.0,
-        "QwQ-32B-Preview": 100.0,
-        "gemini-2.0-flash": 50.0,
-        "DeepSeek-V3": 75.0,
-        "gemini-2.0-pro": 25.0,
-        "DeepSeek-R1-Distill-Qwen-1.5B": 50.0,
-        "gpt-4o": 0.0,
-        "claude-3.5-sonnet": 0.0,
-        "question": 8
-    },
-    {
-        "o3-mini (high)": 100.0,
-        "o1 (medium)": 100.0,
-        "o3-mini (medium)": 100.0,
-        "DeepSeek-R1": 75.0,
-        "o3-mini (low)": 25.0,
-        "DeepSeek-R1-Distill-Qwen-32B": 100.0,
-        "gemini-2.0-flash-thinking": 50.0,
-        "DeepSeek-R1-Distill-Qwen-14B": 50.0,
-        "DeepSeek-R1-Distill-Llama-70B": 50.0,
-        "QwQ-32B-Preview": 0.0,
-        "gemini-2.0-flash": 0.0,
-        "DeepSeek-V3": 25.0,
-        "gemini-2.0-pro": 0.0,
-        "DeepSeek-R1-Distill-Qwen-1.5B": 0.0,
-        "gpt-4o": 75.0,
-        "claude-3.5-sonnet": 25.0,
-        "question": 9
-    },
-    {
-        "o3-mini (high)": 75.0,
-        "o1 (medium)": 100.0,
-        "o3-mini (medium)": 100.0,
-        "DeepSeek-R1": 25.0,
-        "o3-mini (low)": 0.0,
-        "DeepSeek-R1-Distill-Qwen-32B": 0.0,
-        "gemini-2.0-flash-thinking": 0.0,
-        "DeepSeek-R1-Distill-Qwen-14B": 0.0,
-        "DeepSeek-R1-Distill-Llama-70B": 0.0,
-        "QwQ-32B-Preview": 0.0,
-        "gemini-2.0-flash": 0.0,
-        "DeepSeek-V3": 0.0,
-        "gemini-2.0-pro": 0.0,
-        "DeepSeek-R1-Distill-Qwen-1.5B": 0.0,
-        "gpt-4o": 0.0,
-        "claude-3.5-sonnet": 0.0,
-        "question": 10
-    },
-    {
-        "o3-mini (high)": 100.0,
-        "o1 (medium)": 100.0,
-        "o3-mini (medium)": 75.0,
-        "DeepSeek-R1": 25.0,
-        "o3-mini (low)": 0.0,
-        "DeepSeek-R1-Distill-Qwen-32B": 25.0,
-        "gemini-2.0-flash-thinking": 50.0,
-        "DeepSeek-R1-Distill-Qwen-14B": 0.0,
-        "DeepSeek-R1-Distill-Llama-70B": 25.0,
-        "QwQ-32B-Preview": 0.0,
-        "gemini-2.0-flash": 0.0,
-        "DeepSeek-V3": 0.0,
-        "gemini-2.0-pro": 0.0,
-        "DeepSeek-R1-Distill-Qwen-1.5B": 0.0,
-        "gpt-4o": 0.0,
-        "claude-3.5-sonnet": 0.0,
-        "question": 11
-    },
-    {
-        "o3-mini (high)": 100.0,
-        "o1 (medium)": 100.0,
-        "o3-mini (medium)": 100.0,
-        "DeepSeek-R1": 100.0,
-        "o3-mini (low)": 25.0,
-        "DeepSeek-R1-Distill-Qwen-32B": 25.0,
-        "gemini-2.0-flash-thinking": 75.0,
-        "DeepSeek-R1-Distill-Qwen-14B": 75.0,
-        "DeepSeek-R1-Distill-Llama-70B": 100.0,
-        "QwQ-32B-Preview": 25.0,
-        "gemini-2.0-flash": 0.0,
-        "DeepSeek-V3": 0.0,
-        "gemini-2.0-pro": 0.0,
-        "DeepSeek-R1-Distill-Qwen-1.5B": 0.0,
-        "gpt-4o": 0.0,
-        "claude-3.5-sonnet": 0.0,
-        "question": 12
-    },
-    {
-        "o3-mini (high)": 50.0,
-        "o1 (medium)": 25.0,
-        "o3-mini (medium)": 0.0,
-        "DeepSeek-R1": 0.0,
-        "o3-mini (low)": 0.0,
-        "DeepSeek-R1-Distill-Qwen-32B": 0.0,
-        "gemini-2.0-flash-thinking": 0.0,
-        "DeepSeek-R1-Distill-Qwen-14B": 0.0,
-        "DeepSeek-R1-Distill-Llama-70B": 0.0,
-        "QwQ-32B-Preview": 0.0,
-        "gemini-2.0-flash": 0.0,
-        "DeepSeek-V3": 0.0,
-        "gemini-2.0-pro": 0.0,
-        "DeepSeek-R1-Distill-Qwen-1.5B": 0.0,
-        "gpt-4o": 0.0,
-        "claude-3.5-sonnet": 0.0,
-        "question": 13
-    },
-    {
-        "o3-mini (high)": 0.0,
-        "o1 (medium)": 25.0,
-        "o3-mini (medium)": 0.0,
-        "DeepSeek-R1": 0.0,
-        "o3-mini (low)": 0.0,
-        "DeepSeek-R1-Distill-Qwen-32B": 0.0,
-        "gemini-2.0-flash-thinking": 0.0,
-        "DeepSeek-R1-Distill-Qwen-14B": 0.0,
-        "DeepSeek-R1-Distill-Llama-70B": 0.0,
-        "QwQ-32B-Preview": 0.0,
-        "gemini-2.0-flash": 0.0,
-        "DeepSeek-V3": 0.0,
-        "gemini-2.0-pro": 0.0,
-        "DeepSeek-R1-Distill-Qwen-1.5B": 0.0,
-        "gpt-4o": 0.0,
-        "claude-3.5-sonnet": 0.0,
-        "question": 14
-    },
-    {
-        "o3-mini (high)": 0.0,
-        "o1 (medium)": 0.0,
-        "o3-mini (medium)": 0.0,
-        "DeepSeek-R1": 0.0,
-        "o3-mini (low)": 0.0,
-        "DeepSeek-R1-Distill-Qwen-32B": 0.0,
-        "gemini-2.0-flash-thinking": 0.0,
-        "DeepSeek-R1-Distill-Qwen-14B": 0.0,
-        "DeepSeek-R1-Distill-Llama-70B": 0.0,
-        "QwQ-32B-Preview": 0.0,
-        "gemini-2.0-flash": 0.0,
-        "DeepSeek-V3": 0.0,
-        "gemini-2.0-pro": 0.0,
-        "DeepSeek-R1-Distill-Qwen-1.5B": 0.0,
-        "gpt-4o": 0.0,
-        "claude-3.5-sonnet": 0.0,
-        "question": 15
-    },
-    {
-        "o3-mini (high)": 80.0,
-        "o1 (medium)": 78.33333333333334,
-        "o3-mini (medium)": 73.33333333333333,
-        "DeepSeek-R1": 65.0,
-        "o3-mini (low)": 53.33333333333333,
-        "DeepSeek-R1-Distill-Qwen-32B": 53.33333333333333,
-        "gemini-2.0-flash-thinking": 51.66666666666667,
-        "DeepSeek-R1-Distill-Qwen-14B": 50.00000000000001,
-        "DeepSeek-R1-Distill-Llama-70B": 50.0,
-        "QwQ-32B-Preview": 36.666666666666664,
-        "gemini-2.0-flash": 30.0,
-        "DeepSeek-V3": 28.333333333333336,
-        "gemini-2.0-pro": 26.66666666666667,
-        "DeepSeek-R1-Distill-Qwen-1.5B": 25.0,
-        "gpt-4o": 13.333333333333334,
-        "claude-3.5-sonnet": 3.3333333333333335,
-        "question": "Avg"
-    },
-    {
-        "o3-mini (high)": 3.1928864,
-        "o1 (medium)": 44.39680500000001,
-        "o3-mini (medium)": 1.669096,
-        "DeepSeek-R1": 4.90553,
-        "o3-mini (low)": 0.6224152000000002,
-        "DeepSeek-R1-Distill-Qwen-32B": 5.193769,
-        "gemini-2.0-flash-thinking": "N/A",
-        "DeepSeek-R1-Distill-Qwen-14B": 1.1507616,
-        "DeepSeek-R1-Distill-Llama-70B": 1.3534620000000002,
-        "QwQ-32B-Preview": 0.5826876,
-        "gemini-2.0-flash": 0.0568592,
-        "DeepSeek-V3": 0.19196624999999998,
-        "gemini-2.0-pro": 0.8330700000000001,
-        "DeepSeek-R1-Distill-Qwen-1.5B": 0.1600641,
-        "gpt-4o": 0.5545100000000001,
-        "claude-3.5-sonnet": 0.534252,
-        "question": "Cost"
-    }
-]
-
 $(document).ready(function() {
     // Check for click events on the navbar burger icon
 
@@ -359,6 +33,7 @@ $(document).ready(function() {
 	}
 
 	var transposed_data = [];
+    var transposed_secondary_data = [];
 
 	var model_names = [];
 	// get all keys except question
@@ -369,6 +44,7 @@ $(document).ready(function() {
 		if (!model_names.includes(key)) {
 			model_names.push(key);
 			transposed_data.push({"model_name": key});
+            transposed_secondary_data.push({"model_name": key});
 		}
 	}
 
@@ -382,6 +58,19 @@ $(document).ready(function() {
 			transposed_data[j][row['question']] = row[key];
 		}
 	}
+
+	for (var i = 0; i < secondary_data.length; i++) {
+		var row = secondary_data[i];
+		for (var key in row) {
+			if (key == "question") {
+				continue;
+			}
+			var j = model_names.indexOf(key);
+			transposed_secondary_data[j][row['question']] = row[key];
+		}
+	}
+
+
 	var table = $('#myTopTable').DataTable({
 		"data": transposed_data,
 		"columns": [
@@ -462,7 +151,69 @@ $(document).ready(function() {
 			{ width: '5%', targets: 2, className: 'avg-cost' },
 		],
 	});
+
+    var secondary_table = $('#secondaryTable').DataTable({
+		"data": transposed_secondary_data,
+		"columns": [
+	        { "data": "model_name"},  
+			{ "data": "Input Tokens" },
+			{ "data": "Input Cost" },
+			{ "data": "Output Tokens" },
+			{ "data": "Output Cost" },
+			
+	    ],
+		"pageLength": 17,
+		"order": [],
+		"fixedColumns": true,
+		"scrollX": false,
+		"lengthChange": false,
+		"info": false,  // Disable the info text
+		"searching": false,  // Disable the search box
+		"paging": false,  // Disable the pagination
+		"ordering": false,  // Disable the sorting
+		// remove alternating row colors
+		"stripeClasses": [],
+		"columnDefs": [
+			{
+				"targets": [1,2,3,4],
+				"createdCell": function (td, cellData, rowData, row, col) {
+                    // check if cellData includes *, if so skip
+                    if (typeof cellData == "number") {
+					    var pValue = parseFloat(cellData);
+                        // if the target is <= 15, then remove the text
+                        
+                        if (col == 2 || col == 4) {
+                            var string = pValue.toFixed(2).toString();
+                            string = '$' + string;
+                            if (string.length < 6) {
+                                // Add a non-breaking space (invisible but retains width)
+                                string = '\u00A0' + '\u00A0' + string;
+                            }
+                        } else {
+                            var string = pValue.toFixed(0).toString();
+                            if (string.length < 4) {
+                                // Add a non-breaking space (invisible but retains width)
+                                string = '\u00A0' + '\u00A0' + '\u00A0' + '\u00A0' + string;
+                            }
+                            if (string.length < 5) {
+                                // Add a non-breaking space (invisible but retains width)
+                                string = '\u00A0' + '\u00A0' + string;
+                            }
+                        }
+                        
+                        $(td).text(string);
+                    } else if (cellData == "N/A") {
+                        $(td).text('\u00A0' +'\u00A0' + '\u00A0' + "N/A");
+                    }
+				}
+			},
+			{targets: 0, className: 'model-names-secondary'},
+			// set font size of last two columns
+			{width: "20%", targets: [1,2,3,4], className: 'avg-cost-secondary' },
+		],
+	});
 	table.columns.adjust().draw();
+    secondary_table.columns.adjust().draw();
 
     // set up captureTask and captureModelName links 
 

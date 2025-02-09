@@ -95,14 +95,6 @@
                     <i>Select a model name (leftmost column) and a problem number (top row) to see corresponding solutions</i>
                   </span>
                   </th>
-                    <!-- <th colspan="1">o3-mini</th>
-                    <th colspan="1">o1</th>
-                    <th colspan="1">o1-mini</th>
-                    <th colspan="1">R1</th>
-                    <th colspan="1">Gemini-Flash-Thinking</th> -->
-                    <!-- <th>GSM8k</th>
-                    <th>Hellaswag</th>
-                    <th rowspan="2">MMLU</th> -->
                 </tr>
                 <tr>
                   <th colspan="1" class="model-name">Model Name</th>
@@ -222,6 +214,34 @@
 
             <div class="faq-item">
               <div class="faq-question">
+                Can you show the average number of input and output tokens for each model?
+              </div>
+              <div class="faq-answer" style="display: none;">
+                Yes, below you can find the average number of input and output tokens for each model along with the price per million tokens for the API we used.
+                <table id="secondaryTable" class="display" style="width:100%">
+                  <thead>
+                      <tr>
+                        <!-- <th rowspan="2" class="model-name">Model Name</th> -->
+                        <th colspan="5" class="competition-name">AIME I 2025<br>
+                        </th>
+                      </tr>
+                      <tr>
+                        <th colspan="1" class="model-name">Model Name</th>
+                        <th  colspan="1" class="avg-cost-header">Input Tokens</th>
+                        <th  colspan="1" class="avg-cost-header">Input Costs</th>
+                        <th  colspan="1" class="avg-cost-header">Output Tokens</th>
+                        <th  colspan="1" class="avg-cost-header">Output Costs</th>    
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              </div>
+                
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
                 How is the cost calculated?
               </div>
               <div class="faq-answer" style="display: none;">
@@ -261,7 +281,6 @@
               Yes, we are going to open source our evaluation scripts and data in the next few days.
             </div>
           </div>
-
           </div>
         </div>
       </div>
@@ -290,5 +309,8 @@
 </script><!-- End Cloudflare Web Analytics -->
 
 <script src="static/js/traces.js"></script>
+<script src="static/js/table_data.js"></script>
+<script src="static/js/secondary.js"></script>
+
   </body>
   </html>

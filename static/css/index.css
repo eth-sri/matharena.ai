@@ -224,12 +224,12 @@ div.dt-container .dt-paging .current {
   margin-top: -6rem !important;
 }
 
-#myTopTable {
+#myTopTable, #SecondaryTable {
   font-size: 0.8rem;
 }
 
 .competition-name {
-  text-align: center; 
+  text-align: center !important; 
   font-size: 1.1rem !important;
   font-family: "Helvetica" !important;
   font-variant: normal !important;
@@ -245,7 +245,7 @@ div.dt-container .dt-paging .current {
 
 @import url('https://fonts.googleapis.com/css2?family=Latin+Modern+Roman&display=swap');
 
-.model-names {
+.model-names, .model-names-secondary {
   font-size: 1.0rem !important;
   min-width: 260px;
   /* font-family: "Latin Modern Roman", serif; */
@@ -253,10 +253,13 @@ div.dt-container .dt-paging .current {
 }
 
 
-.avg-cost {
+.avg-cost, .avg-cost-secondary {
   font-size: 1.0rem !important;
 }
 
+.avg-cost-header {
+  font-size: 1.0rem !important;
+}
 #traces {
   display: none;
   width: 100%;
