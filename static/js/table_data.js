@@ -309,7 +309,7 @@ var result_data = [
         "o3-mini (medium)": 1.669096,
         "DeepSeek-R1": 4.90553,
         "o3-mini (low)": 0.6224152000000002,
-        "DeepSeek-R1-Distill-Qwen-32B": 5.193769,
+        "DeepSeek-R1-Distill-Qwen-32B": "$0.00*",
         "gemini-2.0-flash-thinking": "N/A",
         "DeepSeek-R1-Distill-Qwen-14B": 1.1507616,
         "DeepSeek-R1-Distill-Llama-70B": 1.3534620000000002,
