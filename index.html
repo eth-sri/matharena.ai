@@ -254,12 +254,22 @@
 
             <div class="faq-item">
               <div class="faq-question">
+                Why did you use the Together API for Deepseek models?
+              </div>
+              <div class="faq-answer" style="display: none;">
+                The Deepseek API only allow answers up to 8000 tokens, which is not enough for most olympiad problems. Thus, using the Deepseek API would have led to a much lower (non-representative) performance of the Deepseek models.
+                We verified that the Together API works well by reproducing the accuracy of Deepseek-R1 on AIME 2024 using our experimental setup.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
                 How do you know that your problems are not in the training data?
               </div>
               <div class="faq-answer" style="display: none;">
                 First, we always evaluate models on new competitions immediately as the problems are released, guaranteeing that the knowledge cutoff of the model is before the date of the competition. 
                 While it is not impossible to rule out that evaluated problems or their variants are in the training data (e.g. because they appeared in another competition, see <a href="https://x.com/DimitrisPapail/status/1888325914603516214" style="color: blue">here</a>), the organizers of competitions such as AIME
-                always try to ensure highest quality of their problemset. So we believe that the problems are sufficiently novel that it is possible to evaluate generalization capabilities of the models.
+                always try to ensure highest quality of their problem set. So we believe that the problems are sufficiently novel that it is possible to evaluate generalization capabilities of the models.
             </div>
           </div>
 
